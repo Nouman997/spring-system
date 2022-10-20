@@ -1,0 +1,23 @@
+<div class="main">
+    <form [formGroup]="companyForm">
+        <mat-card>
+            <mat-card-title>Company Registration</mat-card-title>
+            <mat-card-subtitle>Please fillout the below fields</mat-card-subtitle>
+            <mat-card-content>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company Name</mat-label>
+                    <input matInput id="companyName" placeholder="Enter Company Name" formControlName="name">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                </mat-form-field>
+                <mat-form-field appearance="outline">
+                    <mat-label>Company Address</mat-label>
+                    <input matInput id="companyAddress" placeholder="Enter Company Address" formControlName="address">
+                    <mat-icon matSuffix>contacts</mat-icon>
+                </mat-form-field>
+            </mat-card-content>
+            <mat-card-actions align="end"><button mat-raised-button color="warn" (click)="closeDialog()">Cancel</button>
+                <button mat-raised-button color="primary" *ngIf="!data.id" (click)="addCompany()">Submit</button>
+                <button mat-raised-button color="primary" *ngIf="data.id" (click)="updateCompany(data.id)">Submit</button></mat-card-actions>
+        </mat-card>
+    </form>
+</div>
